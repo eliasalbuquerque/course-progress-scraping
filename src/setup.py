@@ -7,12 +7,14 @@ update: '2024-03-06'
 """
 
 
+# arquivo .\src\setup.py
 import logging
 import logging.config
 from selenium import webdriver
 from selenium.common.exceptions import *
 from selenium.webdriver.support.ui import WebDriverWait 
 from webdriver_manager.chrome import ChromeDriverManager
+# from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.chrome.service import Service as ChromeService
 
@@ -22,6 +24,7 @@ class SetupDriver:
         self.logger = setup_logging.logger
         self.logger.info('====== Setup Driver ======')
     
+
     def standard_options_arguments(self):
         options = ChromeOptions()
 
@@ -41,6 +44,7 @@ class SetupDriver:
 
         return options
 
+
     def additional_options_arguments(self, options, headless=False, detach=False):
         if headless == True:
             options.add_argument('--headless')
@@ -48,6 +52,7 @@ class SetupDriver:
             options.add_experimental_option('detach', True)
 
         return options
+
 
     def experimental_options_arguments(self, options):
         options.add_experimental_option(
@@ -65,6 +70,7 @@ class SetupDriver:
 
         return options
 
+
     def setup_options(self, headless=False, detach=False):
         options = self.standard_options_arguments()
         options = self.additional_options_arguments(options, headless, detach)
@@ -72,6 +78,7 @@ class SetupDriver:
         self.logger.info('ChromeOptions setup complete.')
 
         return options
+
 
     def setup_driver(self, headless=False, detach=False):
         setup_options = self.setup_options(headless, detach)

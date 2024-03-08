@@ -8,9 +8,11 @@ update: '2024-03-06'
 
 
 # main.py
-from src.setup import SetupDriver, SetupLogging, SetupWait
 from src.utils import ScrapingTools
+from src.setup import SetupDriver, SetupLogging, SetupWait
 from src.devaprender import DataProcessing, ViewInformation
+from selenium.webdriver.common.action_chains import ActionChains
+
 
 class Main:
     def __init__(self):
@@ -33,13 +35,22 @@ class Main:
 
     def init_modules(self, driver):
         self.setup_wait = SetupWait(
-            self.setup_logging, self.driver)
+            self.setup_logging, 
+            self.driver)
+        self.actions = ActionChains(self.driver)
         self.utils = ScrapingTools(
-            self.setup_logging, self.driver, self.setup_wait)
+            self.setup_logging, 
+            self.driver, 
+            self.setup_wait, 
+            self.actions)
         self.utils_data = DataProcessing(
-            self.setup_logging, self.driver, self.setup_wait)
+            self.setup_logging, 
+            self.driver, 
+            self.setup_wait)
         self.utils_view = ViewInformation(
-            self.setup_logging, self.driver, self.setup_wait)
+            self.setup_logging, 
+            self.driver, 
+            self.setup_wait)
         
         # IMPLEMENTACAO FUTURA: BANCO DE DADOS E INTERFACE GRAFICA
         # self.database_utils = DataBaseUtils(

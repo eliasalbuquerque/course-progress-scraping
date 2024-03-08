@@ -11,6 +11,7 @@ from decouple import config
 
 
 """ Original file storage in .\assets """
+# teste fazer login
 LOGIN_PAGE = config('TEST_LOGIN_PAGE')
 WAIT_LOGIN = config('TEST_WAIT_LOGIN')
 USER_FIELD = config('TEST_USER_FIELD')
@@ -18,3 +19,12 @@ USER = config('TEST_USER')
 PASS_FIELD = config('TEST_PASS_FIELD')
 PASSWORD = config('TEST_PASSWORD')
 LOGIN_BUTTON = config('TEST_LOGIN_BUTTON')
+# extrair dados das paginas
+PYTHONISTAAUTODIDATA=config('TEST_PYTHONISTAAUTODIDATA')
+XP_PROGRESS_PA=config('TEST_XP_PROGRESS_PA')
+
+MESTRESDAAUTOMACAO=config('TEST_MESTRESDAAUTOMACAO')
+XP_PROGRESS_MA=config('TEST_XP_PROGRESS_MA')
+
+SQLDIRETOAOPONTO=config('TEST_SQLDIRETOAOPONTO')
+XP_PROGRESS_SQL=config('TEST_XP_PROGRESS_SQL')
