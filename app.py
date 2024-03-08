@@ -7,18 +7,17 @@ update: '2024-03-04'
 """
 
 
-import logging
+# import logging
 from main import Main
-from time import sleep
-from decouple import config
+from tests.env_variables import *
 
-LOGIN_PAGE = config('TEST_LOGIN_PAGE')
-WAIT_LOGIN = config('TEST_WAIT_LOGIN')
-USER_FIELD = config('TEST_USER_FIELD')
-USER = config('TEST_USER')
-PASS_FIELD = config('TEST_PASS_FIELD')
-PASSWORD = config('TEST_PASSWORD')
-LOGIN_BUTTON = config('TEST_LOGIN_BUTTON')
+# LOGIN_PAGE = config('TEST_LOGIN_PAGE')
+# WAIT_LOGIN = config('TEST_WAIT_LOGIN')
+# USER_FIELD = config('TEST_USER_FIELD')
+# USER = config('TEST_USER')
+# PASS_FIELD = config('TEST_PASS_FIELD')
+# PASSWORD = config('TEST_PASSWORD')
+# LOGIN_BUTTON = config('TEST_LOGIN_BUTTON')
 
 
 # 1. injecao de dependencias
