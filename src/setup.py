@@ -17,10 +17,8 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.chrome.service import Service as ChromeService
 
 
-# .\src\setup.py
 class SetupDriver:
     def __init__(self, setup_logging):
-        # self.main = main
         self.logger = setup_logging.logger
         self.logger.info('====== Setup Driver ======')
     
@@ -34,7 +32,7 @@ class SetupDriver:
             '--lang=pt-BR',
             # '--window-position=36,68',
             # '--window-size=780,600',
-            '--window-position=36,48',
+            '--window-position=36,28',
             '--window-size=1040,800',
         ]
 
