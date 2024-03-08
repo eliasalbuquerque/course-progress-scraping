@@ -15,6 +15,16 @@ class DataProcessing:
         self.driver = setup_driver
         self.logger = setup_logging.logger
         self.wait = setup_wait.wait
+
+    
+    # courses = [pythonista_autodidata, mestres_da_automacao, sql_direto_ao_ponto]
+
+    # for course in courses:
+    #     course = float(course.strip('%')) / 100
+    #     course = round(course, 2)
+    #     course = (.75-course)
+    #     print(course)
+
     pass
 
 
