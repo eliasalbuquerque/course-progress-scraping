@@ -1,0 +1,36 @@
+{
+    "website_test": {
+        "alias": "test",
+        "url": {
+            "login_page": "https://cursoautomacao.netlify.app/login",
+            "home_page": "https://cursoautomacao.netlify.app/"
+        },
+        "login": {
+            "user": "nome_de_usuario",
+            "password": "1234*Pass"
+        },
+        "xpath": {
+            "wait_login": "//input[@class='form-control']",
+            "user_field": "//input[@id='email']",
+            "password_field": "xpath_do_botao1",
+            "login_button": "xpath_do_botao1",
+            "xp": "xpath"
+        }
+    },
+    "devaprender": {
+        "alias": "devaprender",
+        "url": {
+            "home_page": "https://membros.devaprender.com/",
+            "certificados": "https://membros.devaprender.com/area/eu/certificados"
+        },
+        "login": {
+            "user": "nome_de_usuario",
+            "password": "1234*Pass"
+        },
+        "xpath": {
+            "field1": "xpath_do_campo1",
+            "field2": "xpath_do_campo2",
+            "button1": "xpath_do_botao1"
+        }
+    }
+}
