@@ -14,11 +14,11 @@ from selenium import webdriver
 from selenium.common.exceptions import *
 from selenium.webdriver.support.ui import WebDriverWait 
 from webdriver_manager.chrome import ChromeDriverManager
-# from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.chrome.service import Service as ChromeService
 
 
+# arquivo .\src\setup.py
 class SetupDriver:
     def __init__(self, setup_logging):
         self.logger = setup_logging.logger
@@ -75,7 +75,6 @@ class SetupDriver:
         options = self.standard_options_arguments()
         options = self.additional_options_arguments(options, headless, detach)
         options = self.experimental_options_arguments(options)
-        self.logger.info('ChromeOptions setup complete.')
 
         return options
 
@@ -87,24 +86,24 @@ class SetupDriver:
             service=ChromeService(ChromeDriverManager().install()),
             options=setup_options
         )
-        self.logger.info('Driver setup complete.')
+        self.logger.info('Driver setup complete')
         
         return self.driver
 
 
+# arquivo .\src\setup.py
 class SetupLogging:
     def __init__(self, config_file='config/config_INFO.ini'):
         self.config_file = config_file
         logging.config.fileConfig(fname=self.config_file, disable_existing_loggers=False)
         self.logger = logging.getLogger(__name__)
-        self.logger.info(f'====== Setup Logging ======')
 
 
+# arquivo .\src\setup.py
 class SetupWait:
     def __init__(self, setup_logging, driver):
         self.logger = setup_logging.logger
         self.driver = driver
-        self.logger.info('====== Setup Wait ======')
 
         self.wait = WebDriverWait(
             self.driver,
@@ -116,4 +115,3 @@ class SetupWait:
                 ElementNotSelectableException
             ]
         )
-        self.logger.info('Wait setup complete.')

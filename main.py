@@ -7,7 +7,8 @@ update: '2024-03-06'
 """
 
 
-# main.py
+# arquivo .\main.py
+import logging
 from src.utils import ScrapingTools
 from src.setup import SetupDriver, SetupLogging, SetupWait
 from src.devaprender import DataProcessing, ViewInformation
@@ -17,6 +18,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 class Main:
     def __init__(self):
         self.setup_logging = SetupLogging()
+        self.logger = self.setup_logging.logger
+        self.logger.info('====== LAUNCH APPLICATION ======')
 
 
     def get_setup_driver(self, headless=False, detach=False):
