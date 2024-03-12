@@ -166,3 +166,5 @@ cython_debug/
 modelo_modulos.py
 modelo_gist.md
 guide-generete-new-module.md
+./__pycache__/
+src/__pycache__/
